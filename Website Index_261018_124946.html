@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HariOm PDF - સંપૂર્ણ અનુક્રમણિકા + આર્ટિફેક્ટ લિસ્ટ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;600;700&family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0; font-family:'Noto Sans Gujarati','Work Sans',system-ui; background:#f1f5f9; color:#0f172a; display:flex}
+#sidebar{width:340px; background:#0f172a; color:#e2e8f0; position:sticky; top:0; height:100vh; overflow-y:auto; padding:16px; flex-shrink:0; border-right:4px solid #ffbd2e}
+#sidebar h2{color:#ffbd2e; margin:0; font-family:'Space Grotesk'; font-size:22px}
+#sidebar .sub{font-size:11px; opacity:0.6; margin:6px 0 14px 0}
+.index-btn{display:block; width:100%; text-align:left; background:#1e293b; color:#e2e8f0; border:1px solid #334155; padding:11px 12px; border-radius:12px; margin:7px 0; cursor:pointer; font-size:13px; line-height:1.35; transition:0.2s}
+.index-btn b{color:#ffbd2e}
+.index-btn:hover{background:#334155; transform:translateX(3px)}
+.index-btn.active{background:#ffbd2e; color:#0f172a; font-weight:800; border-color:#ffbd2e}
+.index-btn.active b{color:#0f172a}
+#main{flex:1; padding:24px; max-width:960px; margin:0 auto}
+.topbar{background:#fff; border:1px solid #e2e8f0; border-radius:16px; padding:16px 20px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center}
+.chapter{background:#fff; border:1px solid #e2e8f0; border-radius:18px; padding:22px; margin:18px 0; scroll-margin-top:16px; box-shadow:0 4px 12px rgba(0,0,0,0.04); position:relative; overflow:hidden}
+.chapter::before{content:''; position:absolute; left:0; top:0; bottom:0; width:5px; background:#ffbd2e}
+.chapter h2{margin:0 0 6px 0; font-size:20px; line-height:1.2}
+.chapter .summary{font-size:14px; line-height:1.7; color:#334155; margin:10px 0 14px 0; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:12px; padding:12px 14px}
+.badge{display:inline-block; background:#0f172a; color:#ffbd2e; padding:4px 10px; border-radius:20px; font-size:10px; font-weight:800; letter-spacing:0.5px; margin-bottom:8px}
+.artifact-list{background:#0f172a; color:#e2e8f0; border-radius:14px; padding:14px; margin-top:10px}
+.artifact-list h4{margin:0 0 10px 0; color:#ffbd2e; font-size:13px; text-transform:uppercase; letter-spacing:0.8px}
+.artifact-item{display:flex; gap:10px; padding:8px 10px; background:#1e293b; border:1px solid #334155; border-radius:10px; margin:6px 0; font-size:13px; align-items:center}
+.artifact-item .num{background:#ffbd2e; color:#0f172a; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0; font-size:12px}
+.artifact-item .name{flex:1}
+.artifact-item .type{font-size:10px; background:#334155; padding:3px 8px; border-radius:20px; color:#94a3b8}
+@media(max-width:900px){body{flex-direction:column} #sidebar{width:100%; height:auto; position:relative} #main{padding:12px}}
+</style>
+</head>
+<body>
+<div id="sidebar">
+<h2>📑 અનુક્રમણિકા</h2>
+<div class="sub">બટન દબાવો → તે ચેપ્ટર પર સ્ક્રીન ઉભી રહેશે + કર્સર ફોકસ</div>
+<button class="index-btn" onclick="go('c1')"><b>1.</b> પ્રોજેક્ટ સારાંશ - FINAL BRIEF</button>
+<button class="index-btn" onclick="go('c2')"><b>2.</b> હોમપેજ No-Scroll Concept</button>
+<button class="index-btn" onclick="go('c3')"><b>3.</b> સ્ટોરી સિસ્ટમ - Modal</button>
+<button class="index-btn" onclick="go('c4')"><b>4.</b> Contact Us Icon Logic</button>
+<button class="index-btn" onclick="go('c5')"><b>5.</b> OG Tags - 7 Tags Critical</button>
+<button class="index-btn" onclick="go('c6')"><b>6.</b> Manual Setup Guide</button>
+<button class="index-btn" onclick="go('c7')"><b>7.</b> Build Script / GitHub Action</button>
+<button class="index-btn" onclick="go('c8')"><b>8.</b> Testing & Bug Fixes</button>
+<button class="index-btn" onclick="go('c9')"><b>9.</b> Blogger iframe Embed</button>
+<button class="index-btn" onclick="go('c10')"><b>10.</b> Step-by-Step Simple Guide</button>
+<button class="index-btn" onclick="go('c11')"><b>11.</b> 5 Tabs → 10 Page Scrolling Story</button>
+<button class="index-btn" onclick="go('c12')"><b>12.</b> Supabase Architecture</button>
+<button class="index-btn" onclick="go('c13')"><b>13.</b> Photo/Video Spec 9:16</button>
+<button class="index-btn" onclick="go('c14')"><b>14.</b> Daily Media Uploader Brief</button>
+<button class="index-btn" onclick="go('c15')"><b>15.</b> Supabase Uploader Implementation</button>
+<button class="index-btn" onclick="go('c16')"><b>16.</b> Auto-Scroll 2.5 sec Feature</button>
+<button class="index-btn" onclick="go('c17')"><b>17.</b> Photo Pipeline Tested</button>
+<button class="index-btn" onclick="go('c18')"><b>18.</b> Supabase Bug - Trailing Slash</button>
+<button class="index-btn" onclick="go('c19')"><b>19.</b> RLS Policy & Network Debug</button>
+<button class="index-btn" onclick="go('c20')"><b>20.</b> Video COOP/COEP + serve.py</button>
+</div>
+<div id="main">
+<div class="topbar"><div><b style="font-size:18px">HariOm Sales - PDF ની સંપૂર્ણ અનુક્રમણિકા</b><div style="font-size:12px; color:#64748b">20 Pages | Claude Chat Export | Vikram</div></div><div style="font-size:11px; background:#ffbd2e; padding:6px 10px; border-radius:20px; font-weight:800">AI Artifact List સાથે</div></div>
+<div id="c1" class="chapter"><span class="badge">Chapter 1 - Sep 27</span><h2>1. પ્રોજેક્ટ સારાંશ - FINAL PROJECT BRIEF</h2><div class="summary">GitHub Pages પર 100% Responsive, No-Scroll Home Page વાળી દુકાનની વેબસાઈટ. 3 ફાઈલ (html, css, js) + 4 Google Sheets. 5 Tabs + Shop Gallery 3 photos auto-scroll Instagram story જેવું.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">1</div><div class="name">FINAL PROJECT BRIEF - Best Reply One</div><div class="type">BRIEF</div></div></div></div>
+<div id="c2" class="chapter"><span class="badge">Chapter 2</span><h2>2. હોમપેજ No-Scroll Concept - 100vh</h2><div class="summary">Header માં shop_title Config માંથી, Middle માં 5 Tabs (Mobile 3+2 Grid), Bottom માં Shop Gallery. Navy + Steel + Marigold Palette, Space Grotesk Font, 100dvh fallback 100vh.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">2</div><div class="name">index.html - OG Tags + Structure + 2 Modals</div><div class="type">HTML</div></div><div class="artifact-item"><div class="num">3</div><div class="name">style.css - No-scroll Grid + Story Modal + Dots</div><div class="type">CSS</div></div><div class="artifact-item"><div class="num">4</div><div class="name">script.js - Fetch 4 CSVs + Render Tabs + Auto Slider</div><div class="type">JS</div></div></div></div>
+<div id="c3" class="chapter"><span class="badge">Chapter 3</span><h2>3. સ્ટોરી સિસ્ટમ - Fullscreen Modal</h2><div class="summary">Tab Click → Fullscreen Story Modal, Progress bar ઉપર, Auto Next 4000ms, Left/Right Click Navigate. Source All_Slides Sheet (tab_id, image_url, caption).</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">5</div><div class="name">Hariom googlesheet template - 4 Tabs XLSX</div><div class="type">XLSX</div></div><div class="artifact-item"><div class="num">6</div><div class="name">Setup guide - Manual Work Steps Document</div><div class="type">MD</div></div></div></div>
+<div id="c4" class="chapter"><span class="badge">Chapter 4</span><h2>4. Contact Us (6th Tab) - Icon Embedding Logic</h2><div class="summary">6th Tab માં ઉપર Story Images + નીચે Social Icons Grid. Config માંથી Link વાંચી Embedding, Facebook પર Click તો ફક્ત Facebook. Inline SVG Icons થી PNG ની જરૂર નથી.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">7</div><div class="name">Contact Icon Mapping Logic - Inline SVG</div><div class="type">LOGIC</div></div></div></div>
+<div id="c5" class="chapter"><span class="badge">Chapter 5 - Critical</span><h2>5. OPEN GRAPH TAGS - 7 Mandatory Tags</h2><div class="summary">Crawler JS Run નથી કરતા, એટલે OG Tags Hardcode કરવા જ પડે અથવા Build Script જે Sheet માંથી Inject કરે. Caption માં Comma માટે Proper CSV Parser જરૂરી.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">8</div><div class="name">OG Tags Hardcoded Version - 7 Tags in head</div><div class="type">HTML</div></div><div class="artifact-item"><div class="num">9</div><div class="name">OG Tags Issue Explain Doc - Crawler Problem</div><div class="type">DOC</div></div></div></div>
+<div id="c6" class="chapter"><span class="badge">Chapter 6</span><h2>6. Manual Setup - Step by Step</h2><div class="summary">xlsx → Sheets Convert, Orange Cells ભરો, Anyone with link Viewer, Blogger પર Photos Upload કરી Direct Link Copy, script.js માં SHEET_ID Paste, index.html માં OG Tags ભરો, GitHub Pages Enable.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">10</div><div class="name">SETUP_GUIDE.md - 6 Steps Complete</div><div class="type">MD</div></div></div></div>
+<div id="c7" class="chapter"><span class="badge">Chapter 7</span><h2>7. Build Script / GitHub Action - Auto OG</h2><div class="summary">.github/workflows/deploy.yml + inject-og-tags.mjs + AUTO_OG_SETUP.md. SHEET_ID વાંચી Config CSV Fetch કરી OG Inject કરે, dist/ માં Result, Push/Cron/Manual Trigger.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">11</div><div class="name">.github/workflows/deploy.yml</div><div class="type">YML</div></div><div class="artifact-item"><div class="num">12</div><div class="name">scripts/inject-og-tags.mjs</div><div class="type">MJS</div></div><div class="artifact-item"><div class="num">13</div><div class="name">AUTO_OG_SETUP.md</div><div class="type">MD</div></div><div class="artifact-item"><div class="num">14</div><div class="name">Hariom githubaction addon ZIP</div><div class="type">ZIP</div></div></div></div>
+<div id="c8" class="chapter"><span class="badge">Chapter 8</span><h2>8. Testing & Bug Fixes</h2><div class="summary">Playwright Real Browser Test: Tabs, Gallery, Story Modal, Auto-close, Contact Modal. 100dvh Fallback Fix, WhatsApp Number Scientific Notation Fix. Ken-burns Zoom Cosmetic Issue.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">15</div><div class="name">style.css Fixed - 100dvh + 100vh Fallback</div><div class="type">CSS Fix</div></div><div class="artifact-item"><div class="num">16</div><div class="name">SETUP_GUIDE.md Updated - Number Format Warning</div><div class="type">MD Fix</div></div></div></div>
+<div id="c9" class="chapter"><span class="badge">Chapter 9</span><h2>9. Blogger iframe Embed</h2><div class="summary">GitHub Pages iframe માં Embed થવા દે છે. Blogger Pages → HTML View માં Fixed Position iframe Code Paste કરો. OG Tags Blogger Theme માં b:if સાથે મૂકવા પડે.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">17</div><div class="name">Blogger iframe Code - Fullscreen Fixed Version</div><div class="type">HTML</div></div><div class="artifact-item"><div class="num">18</div><div class="name">Blogger OG Tags Theme Code - b:if cond</div><div class="type">HTML</div></div></div></div>
+<div id="c10" class="chapter"><span class="badge">Chapter 10</span><h2>10. Step-by-Step Simple Guide</h2><div class="summary">Bounce થયું હતું, એટલે 3 ભાગમાં સરળ સમજાવ્યું: GitHub પર મૂકો, Blogger માં iframe મૂકો, Share ની વાત. Mobile Safari Fixed-height iframe Scroll Issue Check કરવું.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">19</div><div class="name">Simple 3-Part Guide - GitHub + Blogger + Sharing</div><div class="type">GUIDE</div></div></div></div>
+<div id="c11" class="chapter"><span class="badge">Chapter 11</span><h2>11. 5 Tabs → 10 Page Scrolling Story</h2><div class="summary">User Demand: 5 Tabs નથી જોઈતો, Direct 10 Page Scrolling Story + 1 Video. Supabase Storage + DB, Full-screen Snap Scroll Reels જેવું, Dynamic Pages.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">20</div><div class="name">New Architecture Proposal - Scrolling Story Plan</div><div class="type">PLAN</div></div><div class="artifact-item"><div class="num">21</div><div class="name">Q&A Decision Doc - Video Source / Scroll Type / Page Count</div><div class="type">DOC</div></div></div></div>
+<div id="c12" class="chapter"><span class="badge">Chapter 12</span><h2>12. Supabase Architecture</h2><div class="summary">Google Sheets ની જગ્યાએ Supabase: Storage + Table, script.js હવે REST API Call કરે, OG Hardcoded અથવા Action Supabase માંથી Inject કરે, Video Auto-play/Pause, Mute Button, Dots Sync.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">22</div><div class="name">index.html - Supabase Snap Scroll + Dots + Mute</div><div class="type">HTML</div></div><div class="artifact-item"><div class="num">23</div><div class="name">style.css - Scroll-Snap + Overlay + Contact Grid</div><div class="type">CSS</div></div><div class="artifact-item"><div class="num">24</div><div class="name">script.js - Supabase Fetch + Video Auto-play/Pause</div><div class="type">JS</div></div><div class="artifact-item"><div class="num">25</div><div class="name">supabase_setup.sql - 2 Tables + Policies + 10 Sample Rows</div><div class="type">SQL</div></div><div class="artifact-item"><div class="num">26</div><div class="name">SETUP_GUIDE.md - Supabase Steps</div><div class="type">MD</div></div></div></div>
+<div id="c13" class="chapter"><span class="badge">Chapter 13</span><h2>13. Photo/Video Spec 9:16</h2><div class="summary">Story = Portrait 9:16, 1080x1920 Ideal, 200-400KB JPG/WebP. Video 720x1280 15-40 sec MP4 10-20MB. OG Image = Landscape 1.91:1 1200x630 અલગ Photo રાખો. TinyPNG થી Compress.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">27</div><div class="name">Photo/Video Spec Doc - 9:16 + 1.91:1 Standard</div><div class="type">SPEC</div></div></div></div>
+<div id="c14" class="chapter"><span class="badge">Chapter 14</span><h2>14. Daily Media Uploader Brief</h2><div class="summary">Spec દેખાય, Direct Photo/Video Capture, WebP, High Quality Low MB, અલગ Folder, Caption Sheet માં, તારીખ પ્રમાણે Sub-Folder. Apps Script Web App થી Drive Upload, Old Combined Download કાઢી નાખ્યું.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">28</div><div class="name">Daily Uploader Requirement Analysis</div><div class="type">BRIEF</div></div></div></div>
+<div id="c15" class="chapter"><span class="badge">Chapter 15</span><h2>15. Supabase Uploader Implementation</h2><div class="summary">દરેક Section માં 4 Button: Photo પાડો / Upload / Video લો / Upload. Photo 4000x3000 → 1080x1920 WebP Tested OK, Drive Payload Verified, ffmpeg.wasm Video માટે.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">29</div><div class="name">daily-media-uploader.html - 4 Buttons + Compress</div><div class="type">HTML</div></div><div class="artifact-item"><div class="num">30</div><div class="name">Code.gs - Apps Script Backend Drive + Sheet</div><div class="type">GS</div></div><div class="artifact-item"><div class="num">31</div><div class="name">SETUP_GUIDE.md - Captions Tab + Deploy Steps</div><div class="type">MD</div></div><div class="artifact-item"><div class="num">32</div><div class="name">daily-media-uploader-supabase.html - No Backend Version</div><div class="type">HTML</div></div></div></div>
+<div id="c16" class="chapter"><span class="badge">Chapter 16</span><h2>16. Auto-Scroll 2.5 sec Feature</h2><div class="summary">Full-screen Snap માટે Auto-Scroll: દર 2.5 sec આગલું Slide, Manual Scroll 4 sec Pause, Loop, Video પૂરો ન થાય ત્યાં સુધી રોકાય. SUPABASE_URL Placeholder યાદ રાખવો.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">33</div><div class="name">script.js Updated - startAutoScroll() + pausedUntil</div><div class="type">JS</div></div><div class="artifact-item"><div class="num">34</div><div class="name">Auto-Scroll Test - Playwright Verified Timing</div><div class="type">TEST</div></div></div></div>
+<div id="c17" class="chapter"><span class="badge">Chapter 17</span><h2>17. Photo Pipeline Tested</h2><div class="summary">4000x3000 Test Photo → 1080x1920 WebP Confirmed, Preview Correct. Video Compression Needs Real Internet CDN, Sandbox Blocks, Flag for Device Test.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">35</div><div class="name">Photo Pipeline Test Report - 1080x1920 WebP</div><div class="type">TEST</div></div><div class="artifact-item"><div class="num">36</div><div class="name">Drive Upload Payload Verified Report</div><div class="type">TEST</div></div></div></div>
+<div id="c18" class="chapter"><span class="badge">Chapter 18</span><h2>18. Supabase Bug - Trailing Slash</h2><div class="summary">Bucket not found + RLS Violation, કારણ SUPABASE_URL માં છેલ્લે / Double Slash URL બનતું હતું. Fix: Trailing Slash કાઢી નાખો, Browser Cache Clear, Anon Key Check.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">37</div><div class="name">Bug Fix Doc - Trailing Slash Explanation</div><div class="type">FIX</div></div><div class="artifact-item"><div class="num">38</div><div class="name">SUPABASE_URL Corrected - No Slash Version</div><div class="type">JS Fix</div></div></div></div>
+<div id="c19" class="chapter"><span class="badge">Chapter 19</span><h2>19. RLS Policy & Network Debug</h2><div class="summary">Headers બરાબર હતા, શંકા Policy Role પર: Wizard ફક્ત authenticated માટે બનાવે છે, anon માટે નહીં. Fix: anon + authenticated બંને Allow. Network Tab માં Request URL + apikey Check કરો.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">39</div><div class="name">RLS Policy Fix - anon + authenticated Check</div><div class="type">FIX</div></div><div class="artifact-item"><div class="num">40</div><div class="name">DevTools Debug Guide - Network Headers Screenshot Steps</div><div class="type">GUIDE</div></div></div></div>
+<div id="c20" class="chapter"><span class="badge">Chapter 20</span><h2>20. Video COOP/COEP + serve.py + Mobile Issue</h2><div class="summary">Video Compression માટે COOP/COEP Headers જરૂરી, GitHub Pages Custom Headers દેતું નથી, Netlify/Cloudflare પર Host કરો _headers સાથે. Local માટે serve.py python serve.py → localhost:8000. Mobile પર પણ એ જ Logic, Photo Upload માટે Server જરૂરી નથી.</div><div class="artifact-list"><h4>🤖 AI આર્ટિફેક્ટ</h4><div class="artifact-item"><div class="num">41</div><div class="name">serve.py - Local Server with COOP/COEP Headers</div><div class="type">PY</div></div><div class="artifact-item"><div class="num">42</div><div class="name">_headers File for Netlify/Cloudflare</div><div class="type">CONFIG</div></div><div class="artifact-item"><div class="num">43</div><div class="name">Mobile vs Desktop Explain - Browser Need Doc</div><div class="type">DOC</div></div><div class="artifact-item"><div class="num">44</div><div class="name">4% Stuck Explain - WASM Slow CPU Guide</div><div class="type">GUIDE</div></div></div></div>
+<div style="text-align:center; padding:24px; color:#64748b; font-size:12px">કુલ 20 Chapters | કુલ 44 Artifacts | HariOm Project PDF | Generated: Oct 2026 | Click → Scroll + Focus</div>
+</div>
+<script>
+function go(id){
+  let btn = window.event.target.closest('.index-btn');
+  document.querySelectorAll('.index-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  let el=document.getElementById(id);
+  if(el){
+    el.scrollIntoView({behavior:'smooth', block:'start'});
+    el.style.boxShadow='0 0 0 4px #ffbd2e, 0 8px 24px rgba(0,0,0,0.15)';
+    el.style.transform='scale(1.01)';
+    setTimeout(()=>{ el.style.boxShadow='0 4px 12px rgba(0,0,0,0.04)'; el.style.transform='scale(1)'; },1800);
+    history.replaceState(null,null,'#'+id);
+    el.setAttribute('tabindex','-1');
+    el.focus({preventScroll:true});
+  }
+}
+window.addEventListener('load',()=>{
+  if(location.hash){
+    let id=location.hash.replace('#','');
+    let el=document.getElementById(id);
+    if(el) setTimeout(()=>el.scrollIntoView({behavior:'smooth'}),400);
+  }
+});
+</script>
+</body>
+</html>
